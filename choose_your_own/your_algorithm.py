@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from sklearn.svm import SVC
 import matplotlib.pyplot as plt
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture
@@ -32,11 +33,8 @@ plt.show()
 ### visualization code (prettyPicture) to show you the decision boundary
 
 
-
-
-
-
-
+clf = SVC()
+clf.fit(features_train, labels_train)
 
 try:
     prettyPicture(clf, features_test, labels_test)
